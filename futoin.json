@@ -1,0 +1,44 @@
+{
+  "name": "futoin-website",
+  "version": "0.0.1",
+  "vcs": "git",
+  "vcsRepo": "git@cfvcs:futoin/web.git",
+  "plugins": {
+    "release": "futoin.cid.misc.releasetool"
+  },
+  "entryPoints": {
+    "frontend": {
+      "tool": "nginx",
+      "path": "public"
+    }
+  },
+  "webcfg": {
+    "root": "public",
+    "mounts": {
+      "/": {
+        "tune": {
+          "pattern": false,
+          "gzip": true,
+          "staticGzip": true
+        }
+      },
+      "/favicons/": {
+        "tune": {
+          "pattern": false,
+          "gzip": false
+        }
+      }
+    }
+  },
+  "actions": {
+    "build": [
+        "@cid tool exec npm -- run build",
+        "@cid tool build gzip"
+    ],
+    "develop": "@cid tool exec npm -- run develop",
+    "upgrade-deps": [
+      "@cid tool update",
+      "@cid tool exec yarn -- upgrade --latest"
+    ]
+  }
+}
