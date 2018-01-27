@@ -17,8 +17,7 @@
     "mounts": {
       "/": {
         "tune": {
-          "pattern": false,
-          "gzip": true,
+          "pattern": true,
           "staticGzip": true
         }
       },

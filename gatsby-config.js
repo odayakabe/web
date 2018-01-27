@@ -1,19 +1,43 @@
-module.exports = {
-  siteMetadata: {
-    title: 'FutoIn',
+
+const siteMetadata = {
+    title: 'FutoIn Guide',
     siteUrl: 'https://futoin.org',
-  },
+    backgroundColor: "#fff",
+    themeColor: "#311b92",
+};
+
+module.exports = {
+  siteMetadata,
   plugins: [
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+            name: `docs`,
+            path: `${__dirname}/docs/`,
+        },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-canonical-urls',
+    'gatsby-plugin-no-sourcemaps',
+    'gatsby-react-router-scroll',
+    {
+        resolve: `gatsby-plugin-sass`,
+        options: {
+            includePaths: [
+                'node_modules',
+                'src',
+                '.',
+            ],
+        },
+    },
     {
         resolve: `gatsby-plugin-favicon`,
         options: {
-            logo: "./src/favicon.png",
+            logo: "./src/components/Navigation/futoin_logo.svg",
             injectHTML: true,
             icons: {
                 android: true,
@@ -31,11 +55,11 @@ module.exports = {
     {
         resolve: `gatsby-plugin-manifest`,
         options: {
-            name: "FutoIn",
-            short_name: "FutoIn",
+            name: siteMetadata.title,
+            short_name: siteMetadata.title,
             start_url: "/",
-            background_color: "#311b92",
-            theme_color: "#311b92",
+            background_color: siteMetadata.backgroundColor,
+            theme_color: siteMetadata.themeColor,
             display: "minimal-ui",
             icons: [
                 {

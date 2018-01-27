@@ -1,23 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { RMWCProvider } from 'rmwc/Provider';
+import { RMWCProvider } from 'rmwc/Provider'
+
+import Navigation from '../components/Navigation'
+
 
 import 'normalize.css/normalize.css'
-import './index.css'
+import './index.scss'
+
+import GatsbyConfig from '../../gatsby-config'
 
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="FutoIn"
+      title={GatsbyConfig.siteMetadata.title}
       meta={[
         { name: 'description', content: 'FutoIn project website' },
         { name: 'keywords', content: 'futoin, async, ci, ci, cid, asyncsteps, node.js, api, interfaces, security' },
-      ]}
-    />
+      ]}>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    </Helmet>
     <RMWCProvider>
-        {children()}
+        <Navigation>
+            {children()}
+        </Navigation>
     </RMWCProvider>
   </div>
 )

@@ -1,0 +1,121 @@
+[
+    {
+        "label" : "Overview",
+        "url" : "/"
+    },
+    {
+        "label" : "AsyncSteps",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/asyncsteps/"
+            },
+            {
+                "label" : "Installation",
+                "url" : "/asyncsteps/install"
+            },
+            {
+                "label" : "Timeout & Cancel",
+                "url" : "/asyncsteps/cancel"
+            },
+            {
+                "label" : "Parallelization",
+                "url" : "/asyncsteps/parallel"
+            },
+            {
+                "label" : "Loops",
+                "url" : "/asyncsteps/loops"
+            },
+            {
+                "label" : "Synchronization",
+                "url" : "/asyncsteps/mutex"
+            },
+            {
+                "label" : "Limiter",
+                "url" : "/asyncsteps/limits"
+            },
+            {
+                "label" : "Interoperation",
+                "url" : "/asyncsteps/interop"
+            }
+        ]
+    },
+    {
+        "label" : "Interfaces",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/ifaces/"
+            },
+            {
+                "label" : "Inheritance",
+                "url" : "/ifaces/inherit"
+            },
+            {
+                "label" : "HTTP",
+                "url" : "/ifaces/http"
+            },
+            {
+                "label" : "Security",
+                "url" : "/ifaces/security"
+            }
+        ]
+    },
+    {
+        "label" : "Microservices",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/microservices/"
+            },
+            {
+                "label" : "CCM",
+                "url" : "/microservices/ccm"
+            },
+            {
+                "label" : "Executor",
+                "url" : "/microservices/executor"
+            },
+            {
+                "label" : "In-process",
+                "url" : "/microservices/inprocess"
+            }
+        ]
+    },
+    {
+        "label" : "CID",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/cid/"
+            }
+        ]
+    },
+    {
+        "label" : "Database",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/db/"
+            }
+        ]
+    },
+    {
+        "label" : "Global Auth",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/auth/"
+            }
+        ]
+    },
+    {
+        "label" : "XferEngine",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/xferengine/"
+            }
+        ]
+    }
+]
