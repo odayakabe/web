@@ -23,8 +23,16 @@
       },
       "/favicons/": {
         "tune": {
+          "etag" : true,
           "pattern": false,
           "gzip": false
+        }
+      },
+      "~* \\.html$" : {
+        "tune" : {
+          "etag" : true,
+          "expires" : "off",
+          "staticGzip": true
         }
       }
     }

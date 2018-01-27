@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Button } from 'rmwc/Button';
 import Link from 'gatsby-link'
 
 import menuContent from '../../menu.json'
@@ -47,16 +48,16 @@ export default function Page({location, pathContext}) {
         <div>
             <article dangerouslySetInnerHTML={{__html: pathContext.html}} />
             <div className="nav-buttons"> 
-                <div className="nav-prev" className="nav-next mdc-button">
+                <div className="nav-prev">
                     {prev &&
                         <Link to={prev.url}>
-                            Prev: {prev.full_label}
+                            <Button> Prev: {prev.full_label} </Button>
                         </Link>}
                 </div>
                 <div className="nav-next">
                     {next &&
-                        <Link to={next.url} className="nav-next mdc-button mdc-button--raised">
-                            Next: {next.full_label}
+                        <Link to={next.url}>
+                            <Button raised theme="secondary-bg"> Next: {next.full_label} </Button>
                         </Link>}
                 </div>
             </div>

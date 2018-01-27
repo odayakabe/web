@@ -23,7 +23,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-canonical-urls',
     'gatsby-plugin-no-sourcemaps',
-    'gatsby-react-router-scroll',
     {
         resolve: `gatsby-plugin-sass`,
         options: {
