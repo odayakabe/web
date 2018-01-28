@@ -1,6 +1,7 @@
 
 === (next) ===
 CHANGED: overview
+NEW: EventStream & Misc.JS sections
 
 === 0.1.0 (2018-01-28) ===
 NEW: Initial version

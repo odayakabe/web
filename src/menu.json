@@ -15,6 +15,10 @@
                 "url" : "/asyncsteps/install"
             },
             {
+                "label" : "First steps",
+                "url" : "/asyncsteps/first-steps"
+            },
+            {
                 "label" : "Timeout & Cancel",
                 "url" : "/asyncsteps/cancel"
             },
@@ -110,11 +114,41 @@
         ]
     },
     {
+        "label" : "EventStream",
+        "submenu" : [
+            {
+                "label" : "Intro",
+                "url" : "/evtstream/"
+            }
+        ]
+    },
+    {
         "label" : "XferEngine",
         "submenu" : [
             {
                 "label" : "Intro",
                 "url" : "/xferengine/"
+            }
+        ]
+    },
+    {
+        "label" : "Misc. JS",
+        "submenu" : [
+            {
+                "label" : "$as + request.js",
+                "url" : "/miscjs/asyncsteps-request"
+            },
+            {
+                "label" : "UUID",
+                "url" : "/miscjs/uuid"
+            },
+            {
+                "label" : "IPSet",
+                "url" : "/miscjs/ipset"
+            },
+            {
+                "label" : "HKDF",
+                "url" : "/miscjs/hkdf"
             }
         ]
     },
