@@ -11,9 +11,9 @@ path: /
 
 ## Main sub-projects
 
-[AsyncSteps](/asyncsteps/) - asyncronous program steps which mimic traditional linear flow.
+[AsyncSteps](/asyncsteps/) - asynchronous program steps which mimic traditional linear flow.
 
-[Interfaces](/ifaces/) - rich service API definition with strict types, inheritance and backwards compatibile versioning.
+[Interfaces](/ifaces/) - rich service API definition with strict types, inheritance and backwards compatible versioning.
 
 [Microservices](/microservices/) - scalable invoker-executor pattern without boilerplates.
 
