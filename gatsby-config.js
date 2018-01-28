@@ -18,7 +18,25 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    'gatsby-transformer-remark',
+    {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+            plugins: [
+                `gatsby-remark-autolink-headers`,
+                `gatsby-remark-copy-linked-files`,
+                `gatsby-remark-smartypants`,
+                `gatsby-plugin-sharp`,
+                {
+                    resolve: `gatsby-remark-images`,
+                    options: {
+                        maxWidth: 590,
+                        linkImagesToOriginal: true,
+                        sizeByPixelDensity: false,
+                    },
+                },
+            ],
+        },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-canonical-urls',

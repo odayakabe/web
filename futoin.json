@@ -2,7 +2,6 @@
   "name": "futoin-website",
   "version": "0.0.1",
   "vcs": "git",
-  "vcsRepo": "git@cfvcs:futoin/web.git",
   "plugins": {
     "release": "futoin.cid.misc.releasetool"
   },

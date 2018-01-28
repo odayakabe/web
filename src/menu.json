@@ -117,5 +117,9 @@
                 "url" : "/xferengine/"
             }
         ]
+    },
+    {
+        "label" : "About",
+        "url" : "/about"
     }
 ]

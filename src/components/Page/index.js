@@ -1,8 +1,10 @@
 
 import React from 'react'
 import { Button } from 'rmwc/Button';
+import { Helmet } from "react-helmet";
 import Link from 'gatsby-link'
 
+import GatsbyConfig from '../../../gatsby-config'
 import menuContent from '../../menu.json'
 
 const flat_menu = [];
@@ -29,14 +31,14 @@ for (let m of menuContent) {
     }
 }
 
-export default function Page({location, pathContext}) {
-    const path = location.pathname;
-    let prev, next, found = false;
+export default function Page({pathContext}) {
+    const path = pathContext.frontmatter.path;
+    let prev, next, curr;
     
     for (let m of flat_menu) {
         if ( path === m.url ) {
-            found = true;
-        } else if (found) {
+            curr = m;
+        } else if (curr) {
             next = m;
             break;
         } else {
@@ -46,6 +48,11 @@ export default function Page({location, pathContext}) {
     
     return (
         <div>
+            <Helmet>
+                <title> {curr.full_label} | {GatsbyConfig.siteMetadata.title} </title>
+                { prev && <link rel="prev" href={prev.url} /> }
+                { next && <link rel="next" href={next.url} /> }
+            </Helmet>
             <article dangerouslySetInnerHTML={{__html: pathContext.html}} />
             <div className="nav-buttons"> 
                 <div className="nav-prev">

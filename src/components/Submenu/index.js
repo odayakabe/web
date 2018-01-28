@@ -29,9 +29,8 @@ export class Submenu extends React.Component {
               className={classNames('submenu__icon', {
                 'submenu__icon--open': this.state.isOpen
               })}
-            >
-              chevron_right
-            </Icon>
+              use="chevron_right"
+            />
           </ListItemMeta>
         </ListItem>
         <div
