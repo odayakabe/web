@@ -4,14 +4,15 @@ path: /
 
 # Overview
 
->
-**FutoIn** is documentation-driven collection of neutral software concepts and reference implementations.
+> **FutoIn** is documentation-driven foundation of neutral software concepts and reference implementations.
+> 
+> FutoIn provides easy mixing of incompatible technologies in projects with loose coupling of all parts.
 
 ![Logo](imgsrc/futoin_logo.png)
 
 ## Main sub-projects
 
-[AsyncSteps](/asyncsteps/) - asynchronous program steps which mimic traditional linear flow.
+[AsyncSteps](/asyncsteps/) - asynchronous program steps which mimic traditional linear flow and threads.
 
 [Interfaces](/ifaces/) - rich service API definition with strict types, inheritance and backwards compatible versioning.
 
@@ -23,7 +24,11 @@ path: /
 
 [Global Auth](/auth/) - advanced authentication & authorization concept for services and users on global scale.
 
+[EventStream](/evtstream/) - DB transaction-bound event stream.
+
 [XferEngine](/xferengine/) - distributed transactional funds operation engine concept.
+
+*Note: JavaScript(ECMAScript) has been choosen for fast prototyping, but the concepts are technology-neutral.*
 
 ## Specifications
 
