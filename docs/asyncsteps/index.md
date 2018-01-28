@@ -24,7 +24,7 @@ Overall features & goals:
 * Mimic "try-catch":
     - clear scoping of inner blocks,
     - mimic "stack unwinding" on errors and cancels,
-    - RAII-like cleanup on stack unrallin,
+    - RAII-like cleanup on async stack unwinding,
     - support recovery actions in `catch`.
 * Mimic "worker pool":
     - parallel execution of steps,

@@ -6,6 +6,8 @@ path: /docs/asyncsteps/first-steps/
 
 *By convention, JS version of AsyncSteps module is referred as `$as`.*
 
+*There is no "thread" term in the spec - it used only for the guide.*.
+
 ## Basic "thread"
 
 Let's start from AsyncSteps "thread" creation:
@@ -134,7 +136,7 @@ asi.add(
             break;
         default:
             console.log( as.state.last_exception ); // just observe
-            // continue async stack unwinded
+            // continue async stack unwinding
         }
     }
 );
