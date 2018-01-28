@@ -1,5 +1,5 @@
 ---
-path: /asyncsteps/loops
+path: /docs/asyncsteps/loops/
 ---
 
 To be written.

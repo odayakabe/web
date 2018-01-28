@@ -1,5 +1,5 @@
 ---
-path: /asyncsteps/install
+path: /docs/asyncsteps/install/
 ---
 
 To be written.
