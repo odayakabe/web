@@ -1,5 +1,5 @@
 ---
-path: /ifaces/inherit
+path: /docs/ifaces/inherit/
 ---
 
 To be written.

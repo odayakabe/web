@@ -1,5 +1,5 @@
 ---
-path: /miscjs/ipset
+path: /docs/miscjs/ipset/
 ---
 
 To be written.

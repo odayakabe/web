@@ -1,5 +1,5 @@
 ---
-path: /about
+path: /docs/about/
 ---
 
 Copyright &copy; 2018 FutoIn Project

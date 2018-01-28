@@ -1,5 +1,5 @@
 ---
-path: /evtstream/
+path: /docs/evtstream/
 ---
 
 To be written.

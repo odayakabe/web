@@ -1,5 +1,5 @@
 ---
-path: /ifaces/http
+path: /docs/ifaces/http/
 ---
 
 To be written.

@@ -1,5 +1,5 @@
 ---
-path: /cid/
+path: /docs/cid/
 ---
 
 To be written.

@@ -1,5 +1,5 @@
 ---
-path: /microservices/ccm
+path: /docs/microservices/ccm/
 ---
 
 To be written.

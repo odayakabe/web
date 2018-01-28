@@ -1,46 +1,46 @@
 [
     {
         "label" : "Overview",
-        "url" : "/"
+        "url" : "/docs/"
     },
     {
         "label" : "AsyncSteps",
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/asyncsteps/"
+                "url" : "/docs/asyncsteps/"
             },
             {
                 "label" : "Installation",
-                "url" : "/asyncsteps/install"
+                "url" : "/docs/asyncsteps/install/"
             },
             {
                 "label" : "First steps",
-                "url" : "/asyncsteps/first-steps"
+                "url" : "/docs/asyncsteps/first-steps/"
             },
             {
                 "label" : "Timeout & Cancel",
-                "url" : "/asyncsteps/cancel"
+                "url" : "/docs/asyncsteps/cancel/"
             },
             {
                 "label" : "Parallelization",
-                "url" : "/asyncsteps/parallel"
+                "url" : "/docs/asyncsteps/parallel/"
             },
             {
                 "label" : "Loops",
-                "url" : "/asyncsteps/loops"
+                "url" : "/docs/asyncsteps/loops/"
             },
             {
                 "label" : "Synchronization",
-                "url" : "/asyncsteps/mutex"
+                "url" : "/docs/asyncsteps/mutex/"
             },
             {
                 "label" : "Limiter",
-                "url" : "/asyncsteps/limits"
+                "url" : "/docs/asyncsteps/limits/"
             },
             {
                 "label" : "Interoperation",
-                "url" : "/asyncsteps/interop"
+                "url" : "/docs/asyncsteps/interop/"
             }
         ]
     },
@@ -49,19 +49,19 @@
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/ifaces/"
+                "url" : "/docs/ifaces/"
             },
             {
                 "label" : "Inheritance",
-                "url" : "/ifaces/inherit"
+                "url" : "/docs/ifaces/inherit/"
             },
             {
                 "label" : "HTTP",
-                "url" : "/ifaces/http"
+                "url" : "/docs/ifaces/http/"
             },
             {
                 "label" : "Security",
-                "url" : "/ifaces/security"
+                "url" : "/docs/ifaces/security/"
             }
         ]
     },
@@ -70,19 +70,19 @@
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/microservices/"
+                "url" : "/docs/microservices/"
             },
             {
                 "label" : "CCM",
-                "url" : "/microservices/ccm"
+                "url" : "/docs/microservices/ccm/"
             },
             {
                 "label" : "Executor",
-                "url" : "/microservices/executor"
+                "url" : "/docs/microservices/executor/"
             },
             {
                 "label" : "In-process",
-                "url" : "/microservices/inprocess"
+                "url" : "/docs/microservices/inprocess/"
             }
         ]
     },
@@ -91,7 +91,7 @@
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/cid/"
+                "url" : "/docs/cid/"
             }
         ]
     },
@@ -100,7 +100,7 @@
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/db/"
+                "url" : "/docs/db/"
             }
         ]
     },
@@ -109,7 +109,7 @@
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/auth/"
+                "url" : "/docs/auth/"
             }
         ]
     },
@@ -118,7 +118,7 @@
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/evtstream/"
+                "url" : "/docs/evtstream/"
             }
         ]
     },
@@ -127,7 +127,7 @@
         "submenu" : [
             {
                 "label" : "Intro",
-                "url" : "/xferengine/"
+                "url" : "/docs/xferengine/"
             }
         ]
     },
@@ -136,24 +136,24 @@
         "submenu" : [
             {
                 "label" : "$as + request.js",
-                "url" : "/miscjs/asyncsteps-request"
+                "url" : "/docs/miscjs/asyncsteps-request/"
             },
             {
                 "label" : "UUID",
-                "url" : "/miscjs/uuid"
+                "url" : "/docs/miscjs/uuid/"
             },
             {
                 "label" : "IPSet",
-                "url" : "/miscjs/ipset"
+                "url" : "/docs/miscjs/ipset/"
             },
             {
                 "label" : "HKDF",
-                "url" : "/miscjs/hkdf"
+                "url" : "/docs/miscjs/hkdf/"
             }
         ]
     },
     {
         "label" : "About",
-        "url" : "/about"
+        "url" : "/docs/about/"
     }
 ]

@@ -1,5 +1,5 @@
 ---
-path: /microservices/executor
+path: /docs/microservices/executor/
 ---
 
 To be written.

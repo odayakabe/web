@@ -1,5 +1,5 @@
 ---
-path: /auth/
+path: /docs/auth/
 ---
 
 To be written.

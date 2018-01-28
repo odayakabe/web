@@ -1,5 +1,5 @@
 ---
-path: /miscjs/asyncsteps-request
+path: /docs/miscjs/asyncsteps-request/
 ---
 
 To be written.

@@ -1,5 +1,5 @@
 ---
-path: /db/
+path: /docs/db/
 ---
 
 To be written.
