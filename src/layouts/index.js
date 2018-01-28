@@ -12,7 +12,6 @@ import './index.scss'
 
 import GatsbyConfig from '../../gatsby-config'
 
-
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
