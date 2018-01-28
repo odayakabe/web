@@ -102,9 +102,42 @@ article {
         color: #67daff;
     }
     
+    $futoin-code-highlight-bg: #f5ffff;
+    
     blockquote {
-        border-left: 4px solid #311B92;
+        border-left: 4px solid $mdc-theme-primary;
         padding-left: 16px;
+    }
+    
+    p code,
+    ul code {
+        font-family: "Roboto Mono", monospace;
+        background-color: $futoin-code-highlight-bg;
+        padding: 0 0.5em;
+    }
+
+    .gatsby-highlight {
+        background-color: $futoin-code-highlight-bg;
+        border-radius: 0.3em;
+        margin: 0.5em 0 0.5em 16px;
+        padding: 16px;
+        overflow: auto;
+        border-left: 4px solid $mdc-theme-primary-light;
+        
+        pre[class*="language-"] {
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            overflow: initial;
+            float: left;
+            min-width: 100%;
+            
+            code {
+                border-left: 0;
+                box-shadow: initial;
+                background-color: $futoin-code-highlight-bg;
+            }
+        }
     }
 }
 

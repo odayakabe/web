@@ -6,6 +6,7 @@ CHANGED: prev buttons colors
 CHANGED: heading colors
 NEW: EventStream & Misc.JS sections
 NEW: AsyncSteps docs
+NEW: syntax highlighting
 
 === 0.1.0 (2018-01-28) ===
 NEW: Initial version

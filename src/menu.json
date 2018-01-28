@@ -41,6 +41,10 @@
             {
                 "label" : "Interoperation",
                 "url" : "/docs/asyncsteps/interop/"
+            },
+            {
+                "label" : "API",
+                "url" : "/docs/asyncsteps/api/"
             }
         ]
     },
@@ -132,7 +136,7 @@
         ]
     },
     {
-        "label" : "Misc. JS",
+        "label" : "Misc.JS",
         "submenu" : [
             {
                 "label" : "$as + request.js",

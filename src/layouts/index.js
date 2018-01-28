@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation'
 
 
 import 'normalize.css/normalize.css'
+import 'prismjs/themes/prism.css';
 import './index.scss'
 
 import GatsbyConfig from '../../gatsby-config'

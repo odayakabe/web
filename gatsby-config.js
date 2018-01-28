@@ -34,6 +34,7 @@ module.exports = {
                         sizeByPixelDensity: false,
                     },
                 },
+                `gatsby-remark-prismjs`,
             ],
         },
     },
