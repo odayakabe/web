@@ -1,6 +1,6 @@
 {
   "name": "futoin-website",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "vcs": "git",
   "plugins": {
     "release": "futoin.cid.misc.releasetool"
@@ -22,15 +22,15 @@
       },
       "/favicons/": {
         "tune": {
-          "etag" : true,
+          "etag": true,
           "pattern": false,
           "gzip": false
         }
       },
-      "~* \\.html$" : {
-        "tune" : {
-          "etag" : true,
-          "expires" : "off",
+      "~* \\.html$": {
+        "tune": {
+          "etag": true,
+          "expires": "off",
           "staticGzip": true
         }
       }
@@ -38,8 +38,8 @@
   },
   "actions": {
     "build": [
-        "@cid tool exec npm -- run build",
-        "@cid tool build gzip"
+      "@cid tool exec npm -- run build",
+      "@cid tool build gzip"
     ],
     "develop": "@cid tool exec npm -- run develop",
     "upgrade-deps": [
