@@ -58,7 +58,7 @@ export default function Page({pathContext}) {
                 <div className="nav-prev">
                     {prev &&
                         <Link to={prev.url}>
-                            <Button> Prev: {prev.full_label} </Button>
+                            <Button theme="secondary-dark"> Prev: {prev.full_label} </Button>
                         </Link>}
                 </div>
                 <div className="nav-next">
