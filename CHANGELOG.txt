@@ -2,6 +2,7 @@
 === (next) ===
 CHANGED: overview
 CHANGED: prev buttons colors
+CHANGED: heading colors
 NEW: EventStream & Misc.JS sections
 NEW: AsyncSteps docs
 
