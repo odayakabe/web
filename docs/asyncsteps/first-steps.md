@@ -2,101 +2,140 @@
 path: /docs/asyncsteps/first-steps/
 ---
 
-    
-## Examples
+# First AsyncSteps
 
-### "thread" control
+*By convention, JS version of AsyncSteps module is referred as `$as`.*
+
+## Basic "thread"
+
+Let's start from AsyncSteps "thread" creation:
 
 ```javascript
-    const root_as = $as() // create "thread"
-        .add( (as) => { /* first step */ } )
-        .add( (as) => { /* second step */ } )
-        .execute(); // start execution of the thread
-
-    root_as.cancel(); // stop execution & cleanup
+const $as = require( 'futoin-asyncsteps' );
+const root_as = $as(); // create "thread"
 ```
 
-### try-catch
+*Note: `$as()` call is syntax sugar for `new AsyncSteps`*
+
+Then, let's add some steps through `.add()` API:
 
 ```javascript
-    as.add(
-        (as) => {
-            // overall "try"
-            
-            as.add(
-                ( as ) => {
-                    // inner "try" #1
-                    as.error( 'MyError' );
-                },
-                ( as, err ) => {
-                    // inner "catch" #2
-                    
-                    if ( err === 'MyError' ) {
-                        as.success(); // ignore error
-                    }
-                }
-            );
-            
-            as.add(
-                ( as ) => {
-                    // inner "try" #2
-                    as.error( 'OtherError' );
-                },
-                ( as, err ) => {
-                    // inner "catch" #2
-                    
-                    if ( err === 'OtherError' ) {
-                        as.add( ( as ) => {
-                            // some recovery steps
-                        } );
-                        // implicit success()
-                    }
-                }
-            );
-        },
-        (as, err) => {
-            // overall "catch"
-            
-            // error code & arbitrary info
-            console.log( err, as.state.error_info );
-            
-            // convention for last native exception ref
-            console.log( as.state.last_exception );
-        }
-    );
+root_as.add( (asi) => console.log( 'Hello World!' ) );
 ```
 
-### Result passing & thread local storage
+Finally, let's start the "thread":
 
 ```javascript
-    as.add(
-        ( as ) => {
-            some_insert( as, {  t: '11' } );
-        },
-        ( as, err ) => {
-            if ( err === 'Duplicate' ) {
-                as.success(); // ignore error
-            }
-        }
-    );
-    
-    // External functionality may insert
-    // any number of sub-steps.
-    //
-    // The last of inserted steps is assumed to
-    // call `as.success( { id: selected_id } )` by
-    // semantics of particular API.
-    some_select( as, {  t: '11' } );
-    
-    // next steps receives result of the previous
-    as.add( ( as, { id } ) => {
-        // use "thread local storage"
-        as.state.id = id;
+// only allowed on root instance
+root_as.execute(); // start the "thread"
+```
+
+The calls above can be chained:
+
+```javascript
+$as()
+    .add( (asi) => console.log( 'Hello World!' ) )
+    .execute();
+```
+
+## Steps
+
+"Step" is continuous executed code fragment. Each such step
+can add other "inner" steps during execution.
+
+Step is represented by a callable. It must always take `asi` interface
+as the first argument. `asi` is a single object to expose all AsyncSteps
+features during execution of particular step.
+
+```javascript
+asi.add( (asi) => {
+    // code fragment
+} );
+```
+
+## Result passing
+
+The step may take additional parameters. They are populated with explicit
+result (`as.success()`) of the previous executed step.
+
+```javascript
+asi.add( (asi) => {
+    asi.add( (asi) => asi.success( 1, 'a', {} ) );
+    asi.add( (asi, n, s, o) => {} );
+} );
+```
+
+## Thread local storage
+
+A single instance of implementation-defined `state` is created with root
+AsyncSteps instance. It must be always accessible through `asi.state`.
+
+```javascript
+asi.add( (asi) => {
+    asi.add( (asi) => {
+        asi.state.some_field = {};
+        asi.state.other_field = 123;
     } );
-    
-    as.add( ( as ) => {
-        // access TLS at any time during thread execution
-        const { id } = as.state;
+    asi.add( (asi) => {
+        console.log( asi.state.some_field );
     } );
+} );
 ```
 
+*Note: please avoid passing generic results through state object!*
+
+## Throwing errors
+
+Expected errors are triggered by `asi.error( error_code[, error_info] )`.
+It sets internal state and throws exception to ensure interruption of
+current step execution. So, unexpected exceptions also get processed.
+
+Error code must be a string which does not change over software evolution.
+String type has been choosen to be easily passable through network.
+It can be seen as name of exception class.
+
+Error info must be a string as well. It is saved in `state.error_info`.
+
+Exception thrown is saved in `state.last_exception`.
+
+```javascript
+asi.add( (asi) => {
+    asi.error( 'ErrorCode', 'Some arbitrary info' );
+} );
+```
+
+## Error handling
+
+Each step can be accompanied by optional error handler. The step itself 
+can be seen as `try {}` block and the error handler as `catch {}` block.
+
+Error handler is set through optional second parameter of `asi.add()`.
+
+Error handler can:
+
+* call `asi.success()` to ignore the error and continue execution,
+* call `asi.error()` to override the error,
+* call `asi.add()` to make recovery actions and continue execution,
+* otherwise, the async stack is unwinded with the original error.
+
+```javascript
+asi.add(
+    (asi) => call_something( asi ),
+    (asi, error_code) => {
+        switch ( error_code ) {
+        case 'Duplicate':
+            as.success(); // ignore
+            break;
+        case 'Mismatch':
+            as.add( (as) => call_other( asi ) ); // recovery
+            break;
+        case 'SecretError':
+            as.error( 'GenericError' );
+            break;
+        default:
+            console.log( as.state.last_exception ); // just observe
+            // continue async stack unwinded
+        }
+    }
+);
+```
