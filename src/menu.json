@@ -36,11 +36,11 @@
             },
             {
                 "label" : "Synchronization",
-                "url" : "/docs/asyncsteps/mutex/"
+                "url" : "/docs/asyncsteps/sync/"
             },
             {
                 "label" : "Limiter",
-                "url" : "/docs/asyncsteps/limits/"
+                "url" : "/docs/asyncsteps/limiter/"
             },
             {
                 "label" : "API reference",

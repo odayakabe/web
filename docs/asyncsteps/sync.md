@@ -1,5 +1,5 @@
 ---
-path: /docs/asyncsteps/mutex/
+path: /docs/asyncsteps/sync/
 ---
 
 # AsyncSteps Synchronization
