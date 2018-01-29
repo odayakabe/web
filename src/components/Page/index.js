@@ -31,43 +31,54 @@ for (let m of menuContent) {
     }
 }
 
-export default function Page({pathContext}) {
-    const path = pathContext.frontmatter.path;
-    let prev, next, curr;
-    
-    for (let m of flat_menu) {
-        if ( path === m.url ) {
-            curr = m;
-        } else if (curr) {
-            next = m;
-            break;
-        } else {
-            prev = m;
+class Page extends React.Component {
+    componentDidUpdate(prevProps) {
+        if ( prevProps.pathContext.frontmatter.path != this.props.pathContext.frontmatter.path ) {
+            window.scrollTo( 0, 0 );
         }
     }
     
-    return (
-        <div>
-            <Helmet>
-                <title> {curr.full_label} | {GatsbyConfig.siteMetadata.title} </title>
-                { prev && <link rel="prev" href={prev.url} /> }
-                { next && <link rel="next" href={next.url} /> }
-            </Helmet>
-            <article dangerouslySetInnerHTML={{__html: pathContext.html}} />
-            <div className="nav-buttons"> 
-                <div className="nav-prev">
-                    {prev &&
-                        <Link to={prev.url}>
-                            <Button theme="secondary-dark"> Prev: {prev.full_label} </Button>
-                        </Link>}
-                </div>
-                <div className="nav-next">
-                    {next &&
-                        <Link to={next.url}>
-                            <Button raised theme="secondary-bg"> Next: {next.full_label} </Button>
-                        </Link>}
+    render() {
+        const { pathContext } = this.props;
+        const path = pathContext.frontmatter.path;
+        let prev, next, curr;
+        
+        for (let m of flat_menu) {
+            if ( path === m.url ) {
+                curr = m;
+            } else if (curr) {
+                next = m;
+                break;
+            } else {
+                prev = m;
+            }
+        }
+        
+        return (
+            <div>
+                <Helmet>
+                    <title> {curr.full_label} | {GatsbyConfig.siteMetadata.title} </title>
+                    { prev && <link rel="prev" href={prev.url} /> }
+                    { next && <link rel="next" href={next.url} /> }
+                </Helmet>
+                <article dangerouslySetInnerHTML={{__html: pathContext.html}} />
+                <div className="nav-buttons"> 
+                    <div className="nav-prev">
+                        {prev &&
+                            <Link to={prev.url}>
+                                <Button theme="secondary-dark"> Prev: {prev.full_label} </Button>
+                            </Link>}
+                    </div>
+                    <div className="nav-next">
+                        {next &&
+                            <Link to={next.url}>
+                                <Button raised theme="secondary-bg"> Next: {next.full_label} </Button>
+                            </Link>}
+                    </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+}
+
+export default Page;
