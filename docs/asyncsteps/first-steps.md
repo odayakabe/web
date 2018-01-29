@@ -4,9 +4,9 @@ path: /docs/asyncsteps/first-steps/
 
 # First AsyncSteps
 
-*By convention, JS version of AsyncSteps module is referred as `$as`.*
+By convention, JS version of AsyncSteps module is referred as `$as`.
 
-*There is no "thread" term in the spec - it used only for the guide.*.
+*Note: there is no "thread" term in the spec - it used only for the guide.*.
 
 ## Basic "thread"
 
@@ -42,7 +42,7 @@ $as()
 
 ## Steps
 
-"Step" is continuous executed code fragment. Each such step
+"Step" is continuously executed code fragment. Each such step
 can add other "inner" steps during execution.
 
 Step is represented by a callable. It must always take `asi` interface

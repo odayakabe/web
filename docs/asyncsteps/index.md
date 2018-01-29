@@ -4,9 +4,8 @@ path: /docs/asyncsteps/
 
 # AsyncSteps intro
 
-**FutoIn AsyncSteps** is a response to demand for a generic concept of asynchronous
-program flow coding in a way which closely mimics traditional synchronous approach
-and execution threads.
+**FutoIn AsyncSteps** is a response to a demand for a generic concept of asynchronous
+program flow coding in a way which closely mimics traditional synchronous threads.
 
 It's the essential part which allows safe transfer of complex financial logic to
 scalable asynchronous runtime.
