@@ -66,6 +66,8 @@ article {
     margin-left: 24px;
     margin-right: 24px;
     
+    @include mdc-typography(body1);
+    
     h1 {
         @include mdc-typography(headline);
     }
@@ -83,8 +85,7 @@ article {
         color: $mdc-theme-primary-dark;
     }
 
-    p {
-        @include mdc-typography(body1);
+    > p {
         max-width: 60em;
         padding-left: 16px;
     }
@@ -103,16 +104,26 @@ article {
     
     $futoin-code-highlight-bg: #f5ffff;
     
-    blockquote {
+    > blockquote {
         border-left: 4px solid $mdc-theme-primary;
         padding-left: 16px;
     }
     
-    p code,
-    ul code {
+    > p code,
+    > ul code,
+    > ol code {
         font-family: "Roboto Mono", monospace;
         background-color: $futoin-code-highlight-bg;
-        padding: 0 0.5em;
+        padding: 0 0.3em;
+    }
+    
+    ul p, ol p {
+        margin: 0;
+    }
+    
+    > ul > li,
+    > ol > li {
+        margin-bottom: 4px;
     }
 
     .gatsby-highlight {

@@ -57,6 +57,8 @@ All synchronization primitives defined in the FTN12 spec are re-entrant.
 
 The primitive may also limit number of queued "threads".
 
+Parallel steps must be treated as independent "threads".
+
 
 ## Mutex
 
