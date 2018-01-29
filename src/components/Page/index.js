@@ -14,7 +14,7 @@ for (let m of menuContent) {
         for ( let sm of m.submenu ) {
             sm = Object.assign(
                 {
-                    full_label: `${m.label} > ${sm.label}`
+                    full_label: `${m.label}: ${sm.label}`
                 },
                 sm
             );
