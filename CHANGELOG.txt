@@ -1,5 +1,5 @@
 
-=== (next) ===
+=== 0.2.0 (2018-01-29) ===
 BREAKING CHANGE: moved all docs under /docs/ page & adding dummy landing
 FIXED: incorrectly set nginx cache headers
 CHANGED: overview
