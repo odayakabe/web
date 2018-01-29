@@ -21,15 +21,26 @@ against arbitrary synchronization primitive.
 ```javascript
 const isync_obj = /* some construct */;
 
-asi.sync(
-    isync_obj,
-    (asi) => {
-        /* critical section */
-    },
-    (asi, error_code) => {
-        /* error handler */
-    }
-);
+asi.add( (asi) => {
+    asi.add( (asi) => as.success( 'some_arg' ) );
+    
+    // Like a regular step, but synchronized
+    asi.sync(
+        isync_obj,
+        (asi, arg) => {
+            /* critical section */
+            
+            assert( arg === 'some_arg' );
+            
+            as.success( 'other_arg' );
+        },
+        (asi, error_code) => {
+            /* error handler */
+        }
+    );
+    
+    as.add( (asi, arg) => assert( arg === 'other_arg' ) );
+} );
 ```
 
 ## Synchronization primitive
@@ -54,7 +65,7 @@ number of AsyncSteps "threads" enter protected critical section simultaneously.
 
 Additionally, it may limit number of queued AsyncSteps "threads".
 
-```
+```javascript
 /* global */
 // Must be imported individually
 const Mutex = require( 'futoin-asyncsteps/Mutex' );
@@ -85,7 +96,7 @@ Additionally, it may limit number of queued AsyncSteps "threads". That's
 strongly encouraged for throttling purposes.
 
 
-```
+```javascript
 /* global */
 // Must be imported individually
 const Throttle = require( 'futoin-asyncsteps/Throttle' );
