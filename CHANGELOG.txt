@@ -1,6 +1,7 @@
 
 === (next) ===
 BREAKING CHANGE: moved all docs under /docs/ page & adding dummy landing
+FIXED: incorrectly set nginx cache headers
 CHANGED: overview
 CHANGED: prev buttons colors
 CHANGED: heading colors

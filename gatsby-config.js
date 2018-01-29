@@ -1,6 +1,8 @@
 
+const futoin_json = require( './futoin.json' );
+
 const siteMetadata = {
-    title: 'FutoIn Guide',
+    title: `FutoIn Guide v${futoin_json.version}`,
     siteUrl: 'https://futoin.org',
     backgroundColor: "#fff",
     themeColor: "#311b92",
@@ -113,6 +115,11 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     // must be last
-    'gatsby-plugin-offline',
+    {
+        resolve: `gatsby-plugin-offline`,
+        options: {
+            cacheId: 'futoin-guide',
+        },
+    },
   ],
 };

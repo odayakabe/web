@@ -16,6 +16,7 @@
     "mounts": {
       "/": {
         "tune": {
+          "expires": "epoch",
           "pattern": true,
           "staticGzip": true
         }
@@ -23,14 +24,14 @@
       "/favicons/": {
         "tune": {
           "etag": true,
+          "expires": "off",
           "pattern": false,
           "gzip": false
         }
       },
-      "~* \\.html$": {
+      "/static/": {
         "tune": {
-          "etag": true,
-          "expires": "off",
+          "expires": "max",
           "staticGzip": true
         }
       }
