@@ -42,7 +42,12 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-canonical-urls',
+    {
+        resolve: `gatsby-plugin-canonical-urls`,
+        options: {
+            siteUrl: siteMetadata.siteUrl,
+        },
+    },
     'gatsby-plugin-no-sourcemaps',
     {
         resolve: `gatsby-plugin-sass`,

@@ -1,6 +1,7 @@
 
 === (next) ===
 FIXED: links in overview
+FIXED: broken canonical URLs
 
 === 0.2.2 (2018-01-29) ===
 CHANGED: to use more HTML-friendly title for sub-pages
