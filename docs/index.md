@@ -12,21 +12,21 @@ path: /docs/
 
 ## Main sub-projects
 
-[AsyncSteps](/asyncsteps/) - asynchronous program steps which mimic traditional linear flow and threads.
+[AsyncSteps](/docs/asyncsteps/) - asynchronous program steps which mimic traditional linear flow and threads.
 
-[Interfaces](/ifaces/) - rich service API definition with strict types, inheritance and backwards compatible versioning.
+[Interfaces](/docs/ifaces/) - rich service API definition with strict types, inheritance and backwards compatible versioning.
 
-[Microservices](/microservices/) - scalable invoker-executor pattern without boilerplates.
+[Microservices](/docs/microservices/) - scalable invoker-executor pattern without boilerplates.
 
-[CID](/cid/) - Continuous Integration & Delivery tool.
+[CID](/docs/cid/) - Continuous Integration & Delivery tool.
 
-[Database](/db/) - concept for microservice interface of SQL-like database engines with query and non-blocking transaction builders.
+[Database](/docs/db/) - concept for microservice interface of SQL-like database engines with query and non-blocking transaction builders.
 
-[Global Auth](/auth/) - advanced authentication & authorization concept for services and users on global scale.
+[Global Auth](/docs/auth/) - advanced authentication & authorization concept for services and users on global scale.
 
-[EventStream](/evtstream/) - DB transaction-bound event stream.
+[EventStream](/docs/evtstream/) - DB transaction-bound event stream.
 
-[XferEngine](/xferengine/) - distributed transactional funds operation engine concept.
+[XferEngine](/docs/xferengine/) - distributed transactional funds operation engine concept.
 
 *Note: JavaScript(ECMAScript) has been choosen for fast prototyping, but the concepts are technology-neutral.*
 
