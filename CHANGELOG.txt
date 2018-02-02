@@ -1,4 +1,7 @@
 
+=== (next) ===
+NEW: LD-JSON meta-info
+
 === 0.2.3 (2018-01-30) ===
 FIXED: links in overview
 FIXED: broken canonical URLs
