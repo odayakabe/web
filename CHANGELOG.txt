@@ -1,6 +1,7 @@
 
 === (next) ===
 NEW: LD-JSON meta-info
+NEW: robots.txt
 
 === 0.2.3 (2018-01-30) ===
 FIXED: links in overview

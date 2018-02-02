@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+SITEMAP: https://futoin.org/sitemap.xml
