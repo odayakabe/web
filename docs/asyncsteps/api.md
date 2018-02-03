@@ -69,6 +69,10 @@ However, they are grouped by semantical scope of use.
     - implementation-defined way of cloning AsyncSteps object
 1. `AsyncSteps sync(ISync obj, execute_callback func[, error_callback onerror] )`
     - add step synchronized against obj
+1. `AsyncSteps successStep( [result_arg, ...] )`
+    - shortcut for `as.add( (as) => as.success( result_arg, ... ) )`
+1. `AsyncSteps await( future_or_promise[, error_callback onerror] )`
+    - integrate technology-specific Future/Promise as a step
 
 ### 2.2.2. Execution API - can be used only inside execute_callback
 

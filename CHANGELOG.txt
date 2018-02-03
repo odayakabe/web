@@ -2,6 +2,7 @@
 === (next) ===
 NEW: LD-JSON meta-info
 NEW: robots.txt
+NEW: added FTN12 v1.11 ES6 Promise / ES7 async function in AsyncSteps support
 
 === 0.2.3 (2018-01-30) ===
 FIXED: links in overview

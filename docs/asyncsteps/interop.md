@@ -69,6 +69,25 @@ asi.add( (asi) => {
 } );
 ```
 
+## ES6 Promise interoperation
+
+Since FTN12 v1.11, it's very easy to add Promise or `async` function
+call as one of steps.
+
+```javascript
+(asi) => {
+    as.await(
+        new Promise( ... ),
+        (as, reason) => {
+            // handle rejection reason
+        }
+    );
+    as.add( ( asi, result ) => {
+        // next step with resolved result
+    } );
+}
+```
+
 ## Additional notes
 
 It's allowed and encouraged to use both `asi.setTimeout()` and
