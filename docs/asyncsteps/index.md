@@ -48,6 +48,8 @@ Overall features & goals:
     - support timeouts & cleanup handlers out-of-box.
 * Chain passing of "result->input" sequences:
     - explicit `as.success()` arguments are passed to the next step.
+* Integration with implementation-specific Futures and Promises:
+    - acts as a regular step
 
 ## Specification
 
