@@ -2,7 +2,7 @@
 path: /docs/ifaces/types/
 ---
 
-# Types intro
+# Interface Types
 
 All types, except for `data` are directly mappable to JSON.
 

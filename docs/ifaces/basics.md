@@ -94,6 +94,12 @@ FutoIn requests support a special `obf` field to allows calls on behalf of anoth
 what is typical in cases when one Services makes calls to another Services with authorization
 of some particular user. Details are also covered in dedicated spec.
 
+## Description inside spec
+
+Types, functions, parameters, result variables and map fields may have optional `desc` field
+inside the spec to add arbitrary description.
+
+However, it's use should be minimized as the spec itself must be self-explanatory.
 
 ## Examples spec
 
