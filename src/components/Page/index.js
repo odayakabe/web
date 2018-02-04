@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Button } from 'rmwc/Button';
+import { Icon } from 'rmwc/Icon';
 import { Helmet } from "react-helmet";
 import Link from 'gatsby-link'
 
@@ -66,13 +67,19 @@ class Page extends React.Component {
                     <div className="nav-prev">
                         {prev &&
                             <Link to={prev.url}>
-                                <Button theme="secondary-dark"> Prev: {prev.full_label} </Button>
+                                <Button theme="secondary-dark"> 
+                                    <Icon strategy="ligature" use="chevron_left" />
+                                    {prev.full_label}
+                                </Button>
                             </Link>}
                     </div>
                     <div className="nav-next">
                         {next &&
                             <Link to={next.url}>
-                                <Button raised theme="secondary-bg"> Next: {next.full_label} </Button>
+                                <Button raised theme="secondary-bg">
+                                    <Icon strategy="ligature" use="chevron_right" />
+                                    {next.full_label}
+                                </Button>
                             </Link>}
                     </div>
                 </div>
