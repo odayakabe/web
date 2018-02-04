@@ -56,6 +56,18 @@
                 "url" : "/docs/ifaces/"
             },
             {
+                "label" : "Basics",
+                "url" : "/docs/ifaces/basics/"
+            },
+            {
+                "label" : "Types",
+                "url" : "/docs/ifaces/types/"
+            },
+            {
+                "label" : "Functions",
+                "url" : "/docs/ifaces/funcs/"
+            },
+            {
                 "label" : "Inheritance",
                 "url" : "/docs/ifaces/inherit/"
             },

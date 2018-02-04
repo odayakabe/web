@@ -14,32 +14,13 @@ in network communication.
 
 **FutoIn messages** can be represented in **JSON** (default), **MessagePack**, **CBOR**
 and potentially other codecs. Embedded binary data is supported only in later two.
-Raw binary data is supported through HTTP transport.
+Raw binary data is also supported through HTTP transport.
 
 FutoIn messages can be transmitted through different **communications channels**:
 HTTP, WebSockets, datagram protocols (UNIX, UDP, SCTP, Browser cross-page event), other custom
 framing on top of streams.
 
 There is special HTTP integration with human-readable URL coding/mapping of message.
-
-## Security
-
-Security data in transmitted in special `sec` field.
-
-Base security is derived from HTTP Basic Authentication with `{user}:{password}` pair.
-Basic Auth can be extracted from `Authorization` HTTP header.
-
-More secure is **HMAC** approach `-hmac:{user}:{type}:{hash}`.
-
-Basic Auth is very weak protection and should be avoided. HMAC adds security, but still
-has many flaws with secret key management. Advanced Security concept is a separate FutoIn
-specification.
-
-## On-behalf-of calls
-
-FutoIn requests support a special `obf` field to allows calls on behalf of another user
-what is typical in cases when one Services makes calls to another Services with authorization
-of some particular user. Details are also covered in dedicated spec.
 
 ## Service interface features
 
@@ -96,123 +77,6 @@ of some particular user. Details are also covered in dedicated spec.
     - Message coding in friendly URL for HTTP.
 * Payload size limits based on interface specs.
 
-## Examples spec
-
-Based on FutoIn Database interface Level 1.
-
-```json
-{
-  "iface": "futoin.db.l1",
-  "version": "1.0",
-  "ftn3rev": "1.7",
-  "imports": [
-    "futoin.ping:1.0"
-  ],
-  "types": {
-    "Query": {
-      "type": "string",
-      "minlen": 1,
-      "maxlen": 10000
-    },
-    "Identifier": {
-      "type": "string",
-      "maxlen": 256
-    },
-    "Row": "array",
-    "Rows": {
-      "type": "array",
-      "elemtype": "Row",
-      "maxlen": 1000
-    },
-    "Field": {
-      "type": "string",
-      "maxlen": 256
-    },
-    "Fields": {
-      "type": "array",
-      "elemtype": "Field",
-      "desc": "List of field named in order of related Row"
-    },
-    "Flavour": {
-      "type": "Identifier",
-      "desc": "Actual actual database driver type"
-    },
-    "QueryResult": {
-      "type": "map",
-      "fields": {
-        "rows": "Rows",
-        "fields": "Fields",
-        "affected": "integer"
-      }
-    }
-  },
-  "funcs": {
-    "query": {
-      "params": {
-        "q": "Query"
-      },
-      "result": "QueryResult",
-      "throws": [
-        "InvalidQuery",
-        "Duplicate",
-        "OtherExecError",
-        "LimitTooHigh"
-      ]
-    },
-    "callStored": {
-      "params": {
-        "name": "Identifier",
-        "args": "Row"
-      },
-      "result": "QueryResult",
-      "throws": [
-        "InvalidQuery",
-        "Duplicate",
-        "OtherExecError",
-        "LimitTooHigh",
-        "DeadLock"
-      ]
-    },
-    "getFlavour": {
-      "result": "Flavour"
-    }
-  }
-}
-```
-
-## Example messages
-
-Canonical formatted JSON examples.
-
-Request:
-
-```json
-{
-    "f" : "futoin.db.l1:1.0:query",
-    "p" : {
-        "q" : "SELECT 1"
-    },
-    "sec" : "-hmac:user:SHA-256:abcd...efgh"
-}
-```
-
-Response:
-
-```json
-{
-    "r" : "postgresql",
-    "sec" : "-hmac:user:SHA-256:abcd...efgh"
-}
-```
-
-Error:
-
-```json
-{
-    "e" : "SecurityError",
-    "edesc" : "Invalid user or HMAC"
-}
-```
 
 ## Reference specifications
 
