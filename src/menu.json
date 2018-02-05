@@ -151,6 +151,10 @@
         "label" : "Misc.JS",
         "submenu" : [
             {
+                "label" : "AsyncEvent",
+                "url" : "/docs/miscjs/asyncevent/"
+            },
+            {
                 "label" : "$as + request.js",
                 "url" : "/docs/miscjs/asyncsteps-request/"
             },

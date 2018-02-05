@@ -1,7 +1,8 @@
 
 === (next) ===
 CHANGED: prev/next buttons to use icons
-NEW: Interfaces chapter
+NEW: completed Interfaces chapter
+NEW: completed Misc.js chapter
 
 === 0.2.4 (2018-02-03) ===
 NEW: LD-JSON meta-info
