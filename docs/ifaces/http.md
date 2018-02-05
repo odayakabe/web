@@ -15,6 +15,10 @@ Below are some highlights from  [FTN5 HTTP integration](https://specs.futoin.org
 
 That's done by intention as HTTP is only a transport communication channel.
 
+## HTTP Basic Authorization
+
+Plain login & password is extracted from `Authorization: basic {base64}` HTTP header, if present.
+
 ## Human-friendly GET
 
 The following URL coding is supported: `{ENDPOINT}/{iface}/{version}/{function}[/sec-field][?query_params]`
